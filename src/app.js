@@ -1,14 +1,22 @@
 new Vue({
   el:'#view-app',
   data:{
-    name:'Abhishe',
-    job:'Sucks',
-    website:'http://www.dummy.com',
-    websiteTag:'<a href="http://www.dummy.com">My Website</a>'
+    age:25,
+    x:0,
+    y:0
   },
   methods:{
-    greet: function(time){
-      return 'Good ' + time + ' ' + this.name;
+    add:function(increment) {
+      this.age += increment;
+    },
+    substract:function(decrement) {
+      this.age -= decrement;
+    },
+    updateXY:function(event){
+      this.x = event.offsetX;
+      this.y = event.offsetY;
+
     }
-  }
+
+    }
 });

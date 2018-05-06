@@ -8,10 +8,16 @@
   </head>
   <body>
     <div id="view-app">
-      <h1>Data Binding</h1>
-      <a v-bind:href="website">My Website</a>
-      <input type="text" v-bind:value="job" />
-      <p v-html="websiteTag"></p>
+      <h1>Events</h1>
+      <button v-on:click="add(1)">Add a Year</button>
+      <button v-on:click="substract(1)">Substract a Year</button>
+      <button v-on:dblclick="add(10)">Add 10 Year</button>
+      <button v-on:dblclick="substract(10)">Substract 10 Year</button>
+      <p>My age is {{ age }}</p>
+      <div id="canvas" v-on:mousemove="updateXY">
+        {{ x }}, {{ y }}
+      </div>
+
     </div>
     <script src="app.js"></script>
   </body>
