@@ -8,26 +8,21 @@
   </head>
   <body>
     <div id="view-app">
-      <h1>Looping through lists</h1>
-      <ul>
-        <li v-for="character in characters">{{ character }}</li>
-      </ul>
-      <ul>
-        <li v-for="(ninja, index) in ninjas">
-          {{ index }} . {{ ninja.name }} - {{ ninja.age }}
-        </li>
-      </ul>
-      <template v-for="(ninja, index) in ninjas">
-        <h3>{{ index }} . {{ninja.name}}</h3>
-        <p>{{ ninja.age }}</p>
-      </template>
-      <template v-for="ninja in ninjas">
-        <div v-for="(val, key) in ninja">
-          <p>
-            {{ key }} , {{ val }}
-          </p>
+      <!-- Bag Image -->
+      <div id="bag" v-bind:class="{burst: ended}">
+
+      </div>
+      <!-- Bag Control -->
+      <div id="bag-health">
+        <div v-bind:style="{width: health + '%'}">
+
         </div>
-      </template>
+      </div>
+      <!-- Game controls -->
+      <div id="controls">
+        <button v-on:click="punch" v-show="!ended">Punch Bag</button>
+        <button v-on:click="restart">Restart</button>
+      </div>
     </div>
     <script src="app.js"></script>
   </body>
