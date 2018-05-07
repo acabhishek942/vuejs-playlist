@@ -1,6 +1,8 @@
 new Vue({
   el:'#view-app',
   data:{
+    name: '',
+    age: ''
 
   },
   methods:{
