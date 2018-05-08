@@ -8,14 +8,17 @@
   </head>
   <body>
     <div id="view-app-one">
-      <h2>{{ title }}</h2>
-      <greeting></greeting>
+      <h2>Refs</h2>
+      <input type="text" ref="inputRef" />
+      <button v-on:click="readRefs">Submit</button>
+      <p>
+        Your fav food {{ output }}
+      </p>
+      <div ref="test">
+        Hello
+      </div>
     </div>
 
-    <div id="view-app-two">
-      <h2>{{ title }}</h2>
-      <greeting></greeting>
-    </div>
     <script src="app.js"></script>
   </body>
 
