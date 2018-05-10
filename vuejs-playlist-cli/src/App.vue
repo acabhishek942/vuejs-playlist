@@ -1,30 +1,25 @@
 <template>
   <div>
-    <form-helper>
-      <div slot='form-header'>
-        <h3>This is the custom tile</h3>
-        <p>Some info for this form</p>
-      </div>
-      <div slot='form-fields'>
-        <input type="text" palceholder="username" required />
-        <input type="password" palceholder="password" required />
-      </div>
-      <div slot='form-controls'>
-        <button v-on:click="handleSubmit()">Submit</button>
-      </div>
-    </form-helper>
+    <keep-alive>
+      <component v-bind:is="components"></component>
+    </keep-alive>
+    <button v-on:click="components='form-one'">Show form one</button>
+    <button v-on:click="components='form-two'">Show form two</button>
   </div>
 </template>
 
 <script>
-import formHelper from './components/formHelper.vue'
+import formOne from './components/formOne.vue'
+import formTwo from './components/formTwo.vue'
+
 export default {
   components:{
-    'form-helper': formHelper
+    'form-one': formOne,
+    'form-two': formTwo
   },
   data() {
     return {
-      title: 'I am title from data method',
+      components: 'form-two'
     }
   },
   methods: {
