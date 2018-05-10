@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     changeHeader: function() {
-      this.title = "Changed title in header";
+      this.$emit("changeTitle", 'Vue Wizards');
 
     }
   }
