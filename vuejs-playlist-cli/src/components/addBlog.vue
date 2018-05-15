@@ -61,11 +61,7 @@ export default {
   },
   methods: {
     postBlog:function() {
-      this.$http.post('http://jsonplaceholder.typicode.com/posts', {
-        title: this.blog.title,
-        body: this.blog.content,
-        userId: 1,
-      }).then(function(data){
+      this.$http.post('https://vuejs-playlist-70b8f.firebaseio.com/posts.json', this.blog).then(function(data){
         console.log(data);
         this.submited = true;
       });
