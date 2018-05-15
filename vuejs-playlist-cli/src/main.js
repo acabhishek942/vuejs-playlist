@@ -8,7 +8,8 @@ Vue.use(VueResource)
 Vue.use(VurRouter)
 
 const router = new VurRouter({
-  routes: Routes
+  routes: Routes,
+  mode: 'history'
 })
 
 // custom directive
